@@ -1,0 +1,11 @@
+.mypy_cache
+__pycache__
+.pytest_cache
+*.pyc
+
+*.tmp
+*.log
+*.bak
+*.swp
+*.zip
+*.tar.gz
