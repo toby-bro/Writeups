@@ -1,3 +1,3 @@
 # Writeups
 
-These are the writeups I wrote for capture the flags.
+A few writeups for CTFs across the years.
