@@ -35,7 +35,7 @@ We will start by supposing that p and q have the following values:
 | $p$      | a???i        |
 | $q$      | b???j        |
 | $q[::-1]$ | j???b        |
-| $p \oplus q[::-1] $ | $a\oplus j$???$i\oplus b$ |
+| $p \oplus q[::-1] $ | $a\oplus j$ ??? $i\oplus b$ |
 | $p\times q$ | $(a \times b)$ ??????? $(i \times j \pmod 2)$        |
 
 The easy conditions to figure out and to understand are those of the XOR and the LSB of $n = p \times q$. And we know that $a \times b$ cannot be bigger than the two most significant bits of $n$. We have
