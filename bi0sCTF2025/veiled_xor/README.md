@@ -107,7 +107,7 @@ where $c$ is the ciphertext and $d$ is the private key.
 
 ## Implementation in python
 
-Python is a really bad language when it comes to manipulating bits, but I wanted to draft a quick program to try the idea and see if the complexity was good enough. To represent the its I used an array of booleans :sweat_smile:.
+Python is a really bad language when it comes to manipulating bits, but I wanted to draft a quick program to try the idea and see if the complexity was good enough. To represent the bits I used an array of booleans :sweat_smile:.
 
 [boolean_solve.py](boolean_solve.py)
 
