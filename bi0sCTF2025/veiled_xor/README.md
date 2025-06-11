@@ -87,7 +87,7 @@ Let's call $(A)_{\to i}$ the number that is constituted of the $i$ most signific
 The conditions they must satisfy are:
 
 $$\left \lbrace \begin{align*}
-p' \oplus q'[::-1] \land m &= x \\
+p' \oplus q'[::-1] \land m &= x \land m\\
 p' \times q' &\equiv n \pmod {2^{k}} \\
 (p' \times q')\_{\to k+1} &\leq n\_{\to k+1} \\
 n_{\to k +1} - (p' \times q')\_{\to k +1} & \leq k+1 \\
