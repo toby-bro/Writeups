@@ -36,22 +36,22 @@ We will start by supposing that p and q have the following values:
 | $q$      | b???j        |
 | $q[::-1]$ | j???b        |
 | $p \oplus q[::-1] $ | $a\oplus j$???$i\oplus b$ |
-| $p\times q$ | $(a \times b)$???????$(i \times j \pmod 2)$        |
+| $p\times q$ | $(a \times b)$ ??????? $(i \times j \pmod 2)$        |
 
 The easy conditions to figure out and to understand are those of the XOR and the LSB of $n = p \times q$. And we know that $a \times b$ cannot be bigger than the two most significant bits of $n$. We have
 
-$$ \left \{ \begin{align*}
+$$\left \{ \begin{align*}
 i \oplus b & = 0 \\
 a \oplus j & = 0 \\
 i \times j & \equiv 1  \pmod 2 \\
 a \times b & \leq n[:2] \\
-\end{align*} \right. $$
+\end{align*} \right.$$
 
 The tricky part is figuring out the condition on the MSB of $n = p \times q$, as the result depends of the carry bit of mulitplication. To try and figure out a condition I wanted to maximise the distance between the MSB of $p \times q$ and the MSB of $n$.
 
 For instance the largest value we can get for the two last bits of $n$ is $11$ which can be obtained if all the bits of $p$ and $q$ are set to 1, thanks to the carry propagation. But this is not obtainable when we only have information on the MSB of $p$ and $q$. And so the largest value we can get for these two last bits is $01$. (We suppose that the unknown bits are set to $0$ in the implementation). In that case we have a difference of $2$.
 
-If we now consider that we are at our $k$-th iteration, in a similar manner I considered that at each step the maximal distance that can is acceptable between the $k$ most significant bits of $n$ and the $k+1$ most significant bits of $p \times q$ is $ k + 1 $.
+If we now consider that we are at our $k$-th iteration, in a similar manner I considered that at each step the maximal distance that can is acceptable between the $k$ most significant bits of $n$ and the $k+1$ most significant bits of $p \times q$ is $k + 1$.
 
 ## Proof of the carry propagation property
 
@@ -85,7 +85,7 @@ Let's call $n$ the product of $p$ and $q$, i.e. $n = p \times q$.
 Let's call $(A)_{\to i}$ the number that is constituted of the $i$ most significant bit of any given $A$ (It's a right shift of $1024-i$).
 
 The conditions they must satisfy are:
-$$ \left \{ \begin{align*}
+$$\left \{ \begin{align*}
 p' \oplus q'[::-1] \, \& \,m = x \\
 p' \times q' \equiv n \pmod {2^{k}} \\
 (p' \times q')_{\to k+1} \leq n_{\to k+1} \\
@@ -95,12 +95,12 @@ n_{\to k +1} - (p' \times q')_{\to k +1}  \leq k+1 \\
 Now to solve the problem we have a stack of coupes $(p, q)$ that are possible. we unpile them, add 4 cases to the stack (one for each couple of bits we are adding to the most significant and least significant) and check if they satisfy the conditions. We stop when a couple $(p, q)$ satisfies the conditions and we can compute the private key.
 
 Once this couple is found, decryption is straightforward RSA decryption, the private key is computed as follows:
-$$ d = e^{-1} \mod \phi(n) $$
+$$d = e^{-1} \mod \phi(n)$$
 
 where $e$ is the public exponent and $\phi(n) = (p-1)(q-1)$.
 
 Then we can decrypt the ciphertext $c$ using the formula:
-$$ m = c^{d} \mod n $$
+$$m = c^{d} \mod n$$
 
 where $c$ is the ciphertext and $d$ is the private key.
 
