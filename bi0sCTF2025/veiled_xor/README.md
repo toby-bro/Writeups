@@ -85,6 +85,7 @@ Let's call $n$ the product of $p$ and $q$, i.e. $n = p \times q$.
 Let's call $(A)_{\to i}$ the number that is constituted of the $i$ most significant bit of any given $A$ (It's a right shift of $1024-i$).
 
 The conditions they must satisfy are:
+
 $$\left \lbrace \begin{align*}
 p' \oplus q'[::-1] \, \& \,m = x \\
 p' \times q' \equiv n \pmod {2^{k}} \\
