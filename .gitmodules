@@ -1,0 +1,6 @@
+[submodule "FCSC2024"]
+	path = FCSC2024
+	url = git@github.com:toby-bro/FCSC2024.git
+[submodule "FCSC2025"]
+	path = FCSC2025
+	url = git@github.com:toby-bro/FCSC25.git
