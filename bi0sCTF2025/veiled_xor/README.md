@@ -2,7 +2,7 @@
 
 ## Challenge Overview
 
-This challenge involves a RSA based encryption scheme in which we are given $n = p \times q$ and $p \oplus q[::-1]$. Where q[::-1]$ is the bit-reversed version of $q$. The goal is to recover $p$ and $q$ to be able to calulate the private key and decrypt the given ciphertext $c$.
+This challenge involves a RSA based encryption scheme in which we are given $n = p \times q$ and $p \oplus q[::-1]$. Where $q[::-1]$ is the bit-reversed version of $q$. The goal is to recover $p$ and $q$ to be able to calulate the private key and decrypt the given ciphertext $c$.
 
 ## Approach
 
