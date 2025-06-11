@@ -40,7 +40,7 @@ We will start by supposing that p and q have the following values:
 
 The easy conditions to figure out and to understand are those of the XOR and the LSB of $n = p \times q$. And we know that $a \times b$ cannot be bigger than the two most significant bits of $n$. We have
 
-$$\left \{ \begin{align*}
+$$\left \lbrace \begin{align*}
 i \oplus b & = 0 \\
 a \oplus j & = 0 \\
 i \times j & \equiv 1  \pmod 2 \\
@@ -85,7 +85,7 @@ Let's call $n$ the product of $p$ and $q$, i.e. $n = p \times q$.
 Let's call $(A)_{\to i}$ the number that is constituted of the $i$ most significant bit of any given $A$ (It's a right shift of $1024-i$).
 
 The conditions they must satisfy are:
-$$\left \{ \begin{align*}
+$$\left \lbrace \begin{align*}
 p' \oplus q'[::-1] \, \& \,m = x \\
 p' \times q' \equiv n \pmod {2^{k}} \\
 (p' \times q')_{\to k+1} \leq n_{\to k+1} \\
