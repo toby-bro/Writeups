@@ -82,15 +82,15 @@ Let's suppose the $k$ most significant and least significant bits of $p$ and $q$
 Let's call $m$ the mask which is $1...10...01...1$ with $k$ bits set to 1 at the beginning and at the end, and $1024 - 2k$ bits set to 0 in the middle.
 Let's call $x$ the reversed xor of $p$ and $q$, i.e. $x = p \oplus q[::-1]$.
 Let's call $n$ the product of $p$ and $q$, i.e. $n = p \times q$.
-Let's call $(A)_{\to i}$ the number that is constituted of the $i$ most significant bit of any given $A$ (It's a right shift of $1024-i$).
+Let's call $(A)_{\to i}$ the number that is constituted of the $i$ most significant bit of any given $A$ (It's a right shift of $2048-i$ for a 2048 bit integer).
 
 The conditions they must satisfy are:
 
 $$\left \lbrace \begin{align*}
-p' \oplus q'[::-1] \, \& \,m = x \\
-p' \times q' \equiv n \pmod {2^{k}} \\
-(p' \times q')_{\to k+1} \leq n_{\to k+1} \\
-n_{\to k +1} - (p' \times q')_{\to k +1}  \leq k+1 \\
+p' \oplus q'[::-1] \land m &= x \\
+p' \times q' &\equiv n \pmod {2^{k}} \\
+(p' \times q')\_{\to k+1} &\leq n\_{\to k+1} \\
+n_{\to k +1} - (p' \times q')\_{\to k +1} & \leq k+1 \\
 \end{align*} \right.$$
 
 Now to solve the problem we have a stack of coupes $(p, q)$ that are possible. we unpile them, add 4 cases to the stack (one for each couple of bits we are adding to the most significant and least significant) and check if they satisfy the conditions. We stop when a couple $(p, q)$ satisfies the conditions and we can compute the private key.
