@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+uv.lock
+*.bak
+*.tmp
+*.zip
+*.log
+
+blockchain
+*.tar.*
+*.zip
+
+# IDA
+*.i64
+*.til
+*.id0
+*.id1
+*.nam
