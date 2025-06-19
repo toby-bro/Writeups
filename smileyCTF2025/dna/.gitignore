@@ -1,0 +1,5 @@
+*.marshal
+vm_executable
+*.o
+*.txt
+notes.md
